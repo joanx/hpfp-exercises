@@ -1,0 +1,24 @@
+name:               word-number
+version:            0.1.0.0
+author:             Joan Xie
+category:           Text
+build-type:         Simple
+cabal-version:      >=1.10
+
+library
+  exposed-modules:  WordNumber
+  ghc-options:      -Wall -fwarn-tabs
+  hs-source-dirs:   src
+  build-depends:    base >=4.7 && <5
+  default-language: Haskell2010
+
+test-suite tests
+  main-is:          tests.hs
+  type:             exitcode-stdio-1.0
+  ghc-options:      -Wall -fno-warn-orphans
+  hs-source-dirs:   tests
+  build-depends:    base >=4.7 && <5
+                  , word-number
+                  , hspec
+                  , QuickCheck
+  default-language: Haskell2010

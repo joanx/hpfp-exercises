@@ -1,0 +1,1295 @@
+
+==================== FINAL INTERFACE ====================
+2018-12-16 05:24:26.220146 UTC
+
+interface Exercises-0.1.0.0-5ZhWKAUoMO1VPEusXAdKH:Exercises 8044
+  interface hash: d0809b7e75575df509360cab7f09bbce
+  ABI hash: 195956ef4865554ec1dcb3a397f83717
+  export-list hash: 38c01f7920004a9a80d827c291221953
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 3ca0e9ce8abe674dfb91bcf1ae79f576
+  opt_hash: 14e536840aca4e889cad654e6f9b79c1
+  hpc_hash: 93b885adfe0da089cdf634904fd59f71
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Exercises.added
+  Exercises.max'
+  Exercises.maxed
+  Exercises.summed
+  Exercises.tupled
+  Exercises.x'
+  Exercises.x''
+  Exercises.xs'
+  Exercises.y
+  Exercises.y'
+  Exercises.y''
+  Exercises.ys'
+  Exercises.z
+  Exercises.Constant{Exercises.Constant getConstant}
+  Exercises.Identity{Exercises.Identity}
+  Exercises.List{Exercises.Cons Exercises.Nil}
+module dependencies:
+package dependencies: base-4.11.1.0* ghc-prim-0.5.2.0
+                      integer-gmp-1.0.2.0
+orphans: base-4.11.1.0:GHC.Float base-4.11.1.0:GHC.Base
+family instance modules: base-4.11.1.0:Control.Applicative
+                         base-4.11.1.0:Data.Functor.Const
+                         base-4.11.1.0:Data.Functor.Identity base-4.11.1.0:Data.Monoid
+                         base-4.11.1.0:Data.Semigroup.Internal base-4.11.1.0:GHC.Generics
+                         base-4.11.1.0:GHC.IO.Exception
+import  -/  base-4.11.1.0:Data.Foldable 8ed35c38958063956af33c935ea03444
+import  -/  base-4.11.1.0:Data.Functor f522c3501272159820fd6f242510732f
+import  -/  base-4.11.1.0:Data.List 83dc843e47bfc0c5af51e19c6f3476d5
+import  -/  base-4.11.1.0:Data.OldList 1b35aa3c6805ff7c8887a35a866fe006
+import  -/  base-4.11.1.0:GHC.Base 604111500e81281298777e721c75643b
+import  -/  base-4.11.1.0:GHC.List 1e4357702d8d00cded0703bd293e50e8
+import  -/  base-4.11.1.0:GHC.Num 8e54b26dce4495382dc4b50cf36ab754
+import  -/  base-4.11.1.0:GHC.Show 73be67392447c974f19c3befd83c46c0
+import  -/  base-4.11.1.0:Prelude 0750c25585e2b797cd78291d423d39dd
+import  -/  ghc-prim-0.5.2.0:GHC.Classes 122abfcd7450c6c11602933c9ca5f80d
+import  -/  ghc-prim-0.5.2.0:GHC.Types d9b3023de7feae4a5308d643da5543f7
+import  -/  integer-gmp-1.0.2.0:GHC.Integer.Type f3d5169c3d3830854b19f6565b265403
+8b08e917bc4932535d79f568c3e7b1ff
+  $fApplicativeConstant ::
+    GHC.Base.Monoid a => GHC.Base.Applicative (Exercises.Constant a)
+  DFunId
+  {- Arity: 1, Strictness: <L,U(U(C(C1(U)),A,A),1*U,A,A)>m,
+     Inline: CONLIKE,
+     Unfolding: DFun: @ a (v :: GHC.Base.Monoid a).
+                  @ (Exercises.Constant a)
+                  (Exercises.$fFunctorConstant @ a)
+                  (\ @ a1 (ds :: a1) -> GHC.Base.mempty @ a v)
+                    `cast`
+                  (forall (a1 :: <*>_N).
+                   <a1>_R ->_R Sym (Exercises.N:Constant[0] <a>_R <a1>_P))
+                  (Exercises.$fApplicativeConstant2 @ a v)
+                    `cast`
+                  (forall (a1 :: <*>_N) (b :: <*>_N).
+                   <Exercises.Constant a (a1 -> b)>_R
+                   ->_R <Exercises.Constant a a1>_R
+                   ->_R Sym (Exercises.N:Constant[0] <a>_R <b>_P))
+                  (\ @ a1
+                     @ b
+                     @ c
+                     (f1 :: a1 -> b -> c)
+                     (x :: Exercises.Constant a a1)
+                     (eta :: Exercises.Constant a b) ->
+                   Exercises.$fApplicativeConstant2
+                     @ a
+                     v
+                     @ b
+                     @ c
+                     x `cast`
+                     (Exercises.N:Constant[0]
+                          <a>_R <a1>_P ; Sym (Exercises.N:Constant[0] <a>_R <b -> c>_P))
+                     eta)
+                    `cast`
+                  (forall (a1 :: <*>_N) (b :: <*>_N) (c :: <*>_N).
+                   <a1 -> b -> c>_R
+                   ->_R <Exercises.Constant a a1>_R
+                   ->_R <Exercises.Constant a b>_R
+                   ->_R Sym (Exercises.N:Constant[0] <a>_R <c>_P))
+                  (Exercises.$fApplicativeConstant1 @ a v)
+                    `cast`
+                  (forall (a1 :: <*>_N) (b :: <*>_N).
+                   <Exercises.Constant a a1>_R
+                   ->_R <Exercises.Constant a b>_R
+                   ->_R Sym (Exercises.N:Constant[0] <a>_R <b>_P))
+                  (\ @ a1
+                     @ b
+                     (x :: Exercises.Constant a a1)
+                     (eta :: Exercises.Constant a b) ->
+                   Exercises.$fApplicativeConstant2
+                     @ a
+                     v
+                     @ b
+                     @ a1
+                     x `cast`
+                     (Exercises.N:Constant[0]
+                          <a>_R <a1>_P ; Sym (Exercises.N:Constant[0] <a>_R <b -> a1>_P))
+                     eta)
+                    `cast`
+                  (forall (a1 :: <*>_N) (b :: <*>_N).
+                   <Exercises.Constant a a1>_R
+                   ->_R <Exercises.Constant a b>_R
+                   ->_R Sym (Exercises.N:Constant[0] <a>_R <a1>_P)) -}
+8b08e917bc4932535d79f568c3e7b1ff
+  $fApplicativeConstant1 ::
+    GHC.Base.Monoid a =>
+    forall a1 b. Exercises.Constant a a1 -> Exercises.Constant a b -> a
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S(S(C(C(S))LL)LLL),1*U(1*U(1*C1(C1(U)),A,A),A,A,A)><L,U><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   ($dMonoid :: GHC.Base.Monoid a)
+                   @ a1
+                   @ b
+                   (a2 :: Exercises.Constant a a1)
+                   (a3 :: Exercises.Constant a b) ->
+                 GHC.Base.<>
+                   @ a
+                   (GHC.Base.$p1Monoid @ a $dMonoid)
+                   a2 `cast` (Exercises.N:Constant[0] <a>_R <a1>_P)
+                   a3 `cast` (Exercises.N:Constant[0] <a>_R <b>_P)) -}
+8b08e917bc4932535d79f568c3e7b1ff
+  $fApplicativeConstant2 ::
+    GHC.Base.Monoid a =>
+    forall a1 b.
+    Exercises.Constant a (a1 -> b) -> Exercises.Constant a a1 -> a
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S(S(C(C(S))LL)LLL),1*U(1*U(1*C1(C1(U)),A,A),A,A,A)><L,U><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   ($dMonoid :: GHC.Base.Monoid a)
+                   @ a1
+                   @ b
+                   (eta :: Exercises.Constant a (a1 -> b))
+                   (eta1 :: Exercises.Constant a a1) ->
+                 GHC.Base.<>
+                   @ a
+                   (GHC.Base.$p1Monoid @ a $dMonoid)
+                   eta `cast` (Exercises.N:Constant[0] <a>_R <a1 -> b>_P)
+                   eta1 `cast` (Exercises.N:Constant[0] <a>_R <a1>_P)) -}
+978a5b3e0e27af58fa8f7b731b12d2bd
+  $fApplicativeIdentity :: GHC.Base.Applicative Exercises.Identity
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Exercises.Identity
+                  Exercises.$fFunctorIdentity
+                  Exercises.$fApplicativeIdentity3
+                    `cast`
+                  (forall (a :: <*>_N).
+                   <a>_R ->_R Sym (Exercises.N:Identity[0] <a>_R))
+                  Exercises.$fApplicativeIdentity2
+                    `cast`
+                  (forall (a :: <*>_N) (b :: <*>_N).
+                   <Exercises.Identity (a -> b)>_R
+                   ->_R <Exercises.Identity a>_R
+                   ->_R Sym (Exercises.N:Identity[0] <b>_R))
+                  Exercises.$fApplicativeIdentity_$cliftA2
+                  (\ @ a @ b -> Exercises.$fApplicativeIdentity1 @ b @ a)
+                  Exercises.$fApplicativeIdentity_$c<* -}
+978a5b3e0e27af58fa8f7b731b12d2bd
+  $fApplicativeIdentity1 ::
+    Exercises.Identity a
+    -> Exercises.Identity b -> Exercises.Identity b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><S,1*U>,
+     Unfolding: InlineRule (2, True, True)
+                (\ @ b
+                   @ a
+                   (a1 :: Exercises.Identity a)
+                   (a2 :: Exercises.Identity b) ->
+                 a2) -}
+978a5b3e0e27af58fa8f7b731b12d2bd
+  $fApplicativeIdentity2 ::
+    Exercises.Identity (a -> b) -> Exercises.Identity a -> b
+  {- Arity: 2, HasNoCafRefs, Strictness: <C(S),1*C1(U)><L,U>,
+     Unfolding: InlineRule (2, True, True)
+                (\ @ a
+                   @ b
+                   (ds :: Exercises.Identity (a -> b))
+                   (ds1 :: Exercises.Identity a) ->
+                 ds `cast` (Exercises.N:Identity[0] <a -> b>_R)
+                   ds1 `cast` (Exercises.N:Identity[0] <a>_R)) -}
+030b20c13e5dd4f48d5351b2ef67eade
+  $fApplicativeIdentity3 :: a -> a
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, True) (\ @ a (a1 :: a) -> a1) -}
+978a5b3e0e27af58fa8f7b731b12d2bd
+  $fApplicativeIdentity_$c<* ::
+    Exercises.Identity a
+    -> Exercises.Identity b -> Exercises.Identity a
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,A>,
+     Unfolding: InlineRule (2, True, True)
+                (\ @ a
+                   @ b
+                   (x :: Exercises.Identity a)
+                   (eta :: Exercises.Identity b) ->
+                 x) -}
+978a5b3e0e27af58fa8f7b731b12d2bd
+  $fApplicativeIdentity_$cliftA2 ::
+    (a -> b -> c)
+    -> Exercises.Identity a
+    -> Exercises.Identity b
+    -> Exercises.Identity c
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,1*C1(C(U))><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a @ b @ c (f1 :: a -> b -> c) (x :: Exercises.Identity a) ->
+                 let {
+                   ds :: b -> c = f1 x `cast` (Exercises.N:Identity[0] <a>_R)
+                 } in
+                 (\ (ds1 :: Exercises.Identity b) ->
+                  ds ds1 `cast` (Exercises.N:Identity[0] <b>_R))
+                   `cast`
+                 (<Exercises.Identity b>_R
+                  ->_R Sym (Exercises.N:Identity[0] <c>_R))) -}
+66545045b285f286d1d15d4281d14bec
+  $fApplicativeList :: GHC.Base.Applicative Exercises.List
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Exercises.List
+                  Exercises.$fFunctorList
+                  Exercises.$fApplicativeList_$cpure
+                  Exercises.$fApplicativeList_$c<*>
+                  Exercises.$fApplicativeList_$cliftA2
+                  Exercises.$fApplicativeList_$c*>
+                  Exercises.$fApplicativeList_$c<* -}
+4facab2f5e01f536ff47f22953ae6d36
+  $fApplicativeList1 :: a -> b -> b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><S,1*U>,
+     Unfolding: InlineRule (2, True, True)
+                (\ @ b @ a (ds :: a) (eta :: b) -> eta) -}
+66545045b285f286d1d15d4281d14bec
+  $fApplicativeList_$c*> ::
+    Exercises.List a -> Exercises.List b -> Exercises.List b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a @ b (a1 :: Exercises.List a) (a2 :: Exercises.List b) ->
+                 Exercises.$fApplicativeList_$c<*>
+                   @ b
+                   @ b
+                   (Exercises.$fApplicativeList_$cfmap
+                      @ a
+                      @ (b -> b)
+                      (Exercises.$fApplicativeList1 @ b @ a)
+                      a1)
+                   a2) -}
+66545045b285f286d1d15d4281d14bec
+  $fApplicativeList_$c<* ::
+    Exercises.List a -> Exercises.List b -> Exercises.List a
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ a @ b (x :: Exercises.List a) ->
+                 Exercises.$fApplicativeList_$c<*>
+                   @ b
+                   @ a
+                   (Exercises.$fApplicativeList_$cfmap
+                      @ a
+                      @ (b -> a)
+                      (GHC.Base.const @ a @ b)
+                      x)) -}
+66545045b285f286d1d15d4281d14bec
+  $fApplicativeList_$c<*> ::
+    Exercises.List (a -> b) -> Exercises.List a -> Exercises.List b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,1*U><S,1*U> -}
+66545045b285f286d1d15d4281d14bec
+  $fApplicativeList_$cfmap ::
+    (a -> b) -> Exercises.List a -> Exercises.List b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,C(U)><S,1*U> -}
+66545045b285f286d1d15d4281d14bec
+  $fApplicativeList_$cliftA2 ::
+    (a -> b -> c)
+    -> Exercises.List a -> Exercises.List b -> Exercises.List c
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,C(U)><L,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a @ b @ c (f1 :: a -> b -> c) (x :: Exercises.List a) ->
+                 Exercises.$fApplicativeList_$c<*>
+                   @ b
+                   @ c
+                   (Exercises.$fApplicativeList_$cfmap @ a @ (b -> c) f1 x)) -}
+66545045b285f286d1d15d4281d14bec
+  $fApplicativeList_$cpure :: a -> Exercises.List a
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U>m2,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ a (a1 :: a) -> Exercises.Cons @ a a1 (Exercises.Nil @ a)) -}
+8b08e917bc4932535d79f568c3e7b1ff
+  $fEqConstant ::
+    GHC.Classes.Eq a => GHC.Classes.Eq (Exercises.Constant a b)
+  DFunId
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U(1*U,1*U)>m,
+     Inline: CONLIKE,
+     Unfolding: DFun: @ a @ b (v :: GHC.Classes.Eq a).
+                  @ (Exercises.Constant a b)
+                  (GHC.Classes.== @ a v)
+                    `cast`
+                  (Sym (Exercises.N:Constant[0] <a>_R <b>_P)
+                   ->_R Sym (Exercises.N:Constant[0] <a>_R <b>_P)
+                   ->_R <GHC.Types.Bool>_R)
+                  (GHC.Classes./= @ a v)
+                    `cast`
+                  (Sym (Exercises.N:Constant[0] <a>_R <b>_P)
+                   ->_R Sym (Exercises.N:Constant[0] <a>_R <b>_P)
+                   ->_R <GHC.Types.Bool>_R) -}
+978a5b3e0e27af58fa8f7b731b12d2bd
+  $fEqIdentity ::
+    GHC.Classes.Eq a => GHC.Classes.Eq (Exercises.Identity a)
+  DFunId
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U(1*U,1*U)>m,
+     Inline: CONLIKE,
+     Unfolding: DFun: @ a (v :: GHC.Classes.Eq a).
+                  @ (Exercises.Identity a)
+                  (GHC.Classes.== @ a v)
+                    `cast`
+                  (Sym (Exercises.N:Identity[0] <a>_R)
+                   ->_R Sym (Exercises.N:Identity[0] <a>_R)
+                   ->_R <GHC.Types.Bool>_R)
+                  (GHC.Classes./= @ a v)
+                    `cast`
+                  (Sym (Exercises.N:Identity[0] <a>_R)
+                   ->_R Sym (Exercises.N:Identity[0] <a>_R)
+                   ->_R <GHC.Types.Bool>_R) -}
+66545045b285f286d1d15d4281d14bec
+  $fEqList :: GHC.Classes.Eq a => GHC.Classes.Eq (Exercises.List a)
+  DFunId
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U(C(C1(U)),A)>m,
+     Inline: CONLIKE,
+     Unfolding: DFun: @ a (v :: GHC.Classes.Eq a).
+                  @ (Exercises.List a)
+                  (Exercises.$fEqList_$c== @ a v)
+                  (Exercises.$fEqList_$c/= @ a v) -}
+66545045b285f286d1d15d4281d14bec
+  $fEqList_$c/= ::
+    GHC.Classes.Eq a =>
+    Exercises.List a -> Exercises.List a -> GHC.Types.Bool
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,U(C(C1(U)),A)><S,1*U><S,1*U>, Inline: (sat-args=2),
+     Unfolding: InlineRule (3, False, False)
+                (\ @ a
+                   ($dEq :: GHC.Classes.Eq a)
+                   (x :: Exercises.List a)
+                   (y12 :: Exercises.List a) ->
+                 case Exercises.$fEqList_$c== @ a $dEq x y12 of wild {
+                   GHC.Types.False -> GHC.Types.True
+                   GHC.Types.True -> GHC.Types.False }) -}
+66545045b285f286d1d15d4281d14bec
+  $fEqList_$c== ::
+    GHC.Classes.Eq a =>
+    Exercises.List a -> Exercises.List a -> GHC.Types.Bool
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,U(C(C1(U)),A)><S,1*U><S,1*U> -}
+8b08e917bc4932535d79f568c3e7b1ff
+  $fFunctorConstant :: GHC.Base.Functor (Exercises.Constant a)
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun: @ a.
+                  @ (Exercises.Constant a)
+                  (Exercises.$fFunctorConstant2 @ a)
+                    `cast`
+                  (forall (a1 :: <*>_N) (b :: <*>_N).
+                   <a1 -> b>_R
+                   ->_R <Exercises.Constant a a1>_R
+                   ->_R Exercises.N:Constant[0]
+                            <a>_R <a1>_P ; Sym (Exercises.N:Constant[0] <a>_R <b>_P))
+                  (\ @ a1 @ b -> Exercises.$fFunctorConstant1 @ b @ a @ a1)
+                    `cast`
+                  (forall (a1 :: <*>_N) (b :: <*>_N).
+                   <a1>_R
+                   ->_R <Exercises.Constant a b>_R
+                   ->_R Exercises.N:Constant[0]
+                            <a>_R <b>_P ; Sym (Exercises.N:Constant[0] <a>_R <a1>_P)) -}
+8b08e917bc4932535d79f568c3e7b1ff
+  $fFunctorConstant1 ::
+    a2 -> Exercises.Constant a1 b -> Exercises.Constant a1 b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><S,1*U>,
+     Unfolding: InlineRule (2, True, True)
+                (\ @ b @ a @ a1 (x :: a1) (ds :: Exercises.Constant a b) -> ds) -}
+8b08e917bc4932535d79f568c3e7b1ff
+  $fFunctorConstant2 ::
+    (a2 -> b) -> Exercises.Constant a1 a2 -> Exercises.Constant a1 a2
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><S,1*U>,
+     Unfolding: InlineRule (2, True, True)
+                (\ @ a @ a1 @ b (ds :: a1 -> b) (ds1 :: Exercises.Constant a a1) ->
+                 ds1) -}
+978a5b3e0e27af58fa8f7b731b12d2bd
+  $fFunctorIdentity :: GHC.Base.Functor Exercises.Identity
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Exercises.Identity
+                  Exercises.$fFunctorIdentity2
+                    `cast`
+                  (forall (a :: <*>_N) (b :: <*>_N).
+                   <a -> b>_R
+                   ->_R <Exercises.Identity a>_R
+                   ->_R Sym (Exercises.N:Identity[0] <b>_R))
+                  (\ @ a @ b -> Exercises.$fFunctorIdentity1 @ b @ a)
+                    `cast`
+                  (forall (a :: <*>_N) (b :: <*>_N).
+                   <a>_R
+                   ->_R <Exercises.Identity b>_R
+                   ->_R Sym (Exercises.N:Identity[0] <a>_R)) -}
+978a5b3e0e27af58fa8f7b731b12d2bd
+  $fFunctorIdentity1 :: a -> Exercises.Identity b -> a
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,A>,
+     Unfolding: InlineRule (2, True, True)
+                (\ @ b @ a (x :: a) (ds :: Exercises.Identity b) -> x) -}
+978a5b3e0e27af58fa8f7b731b12d2bd
+  $fFunctorIdentity2 :: (a -> b) -> Exercises.Identity a -> b
+  {- Arity: 2, HasNoCafRefs, Strictness: <C(S),1*C1(U)><L,U>,
+     Unfolding: InlineRule (2, True, True)
+                (\ @ a @ b (f :: a -> b) (ds :: Exercises.Identity a) ->
+                 f ds `cast` (Exercises.N:Identity[0] <a>_R)) -}
+66545045b285f286d1d15d4281d14bec
+  $fFunctorList :: GHC.Base.Functor Exercises.List
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Exercises.List
+                  Exercises.$fApplicativeList_$cfmap
+                  Exercises.$fFunctorList_$c<$ -}
+66545045b285f286d1d15d4281d14bec
+  $fFunctorList_$c<$ :: a -> Exercises.List b -> Exercises.List a
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a @ b (x :: a) (eta :: Exercises.List b) ->
+                 Exercises.$fApplicativeList_$cfmap
+                   @ b
+                   @ a
+                   (\ (ds :: b) -> x)
+                   eta) -}
+66545045b285f286d1d15d4281d14bec
+  $fMonoidList :: GHC.Base.Monoid (Exercises.List a)
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun: @ a.
+                  @ (Exercises.List a)
+                  (Exercises.$fSemigroupList @ a)
+                  (Exercises.Nil @ a)
+                  (Exercises.$fMonoidList_$c<> @ a)
+                  (Exercises.$fMonoidList_go @ a) -}
+66545045b285f286d1d15d4281d14bec
+  $fMonoidList_$c<> ::
+    Exercises.List a -> Exercises.List a -> Exercises.List a
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U> -}
+66545045b285f286d1d15d4281d14bec
+  $fMonoidList_go :: [Exercises.List a] -> Exercises.List a
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
+8b08e917bc4932535d79f568c3e7b1ff
+  $fOrdConstant ::
+    GHC.Classes.Ord a => GHC.Classes.Ord (Exercises.Constant a b)
+  DFunId
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <L,U(1*U(1*U,1*U),1*U,1*U,1*U,1*U,1*U,1*U,1*U)>m,
+     Inline: CONLIKE,
+     Unfolding: DFun: @ a @ b (v :: GHC.Classes.Ord a).
+                  @ (Exercises.Constant a b)
+                  (Exercises.$fOrdConstant_$cp1Ord @ a @ b v)
+                  (GHC.Classes.compare @ a v)
+                    `cast`
+                  (Sym (Exercises.N:Constant[0] <a>_R <b>_P)
+                   ->_R Sym (Exercises.N:Constant[0] <a>_R <b>_P)
+                   ->_R <GHC.Types.Ordering>_R)
+                  (GHC.Classes.< @ a v)
+                    `cast`
+                  (Sym (Exercises.N:Constant[0] <a>_R <b>_P)
+                   ->_R Sym (Exercises.N:Constant[0] <a>_R <b>_P)
+                   ->_R <GHC.Types.Bool>_R)
+                  (GHC.Classes.<= @ a v)
+                    `cast`
+                  (Sym (Exercises.N:Constant[0] <a>_R <b>_P)
+                   ->_R Sym (Exercises.N:Constant[0] <a>_R <b>_P)
+                   ->_R <GHC.Types.Bool>_R)
+                  (GHC.Classes.> @ a v)
+                    `cast`
+                  (Sym (Exercises.N:Constant[0] <a>_R <b>_P)
+                   ->_R Sym (Exercises.N:Constant[0] <a>_R <b>_P)
+                   ->_R <GHC.Types.Bool>_R)
+                  (GHC.Classes.>= @ a v)
+                    `cast`
+                  (Sym (Exercises.N:Constant[0] <a>_R <b>_P)
+                   ->_R Sym (Exercises.N:Constant[0] <a>_R <b>_P)
+                   ->_R <GHC.Types.Bool>_R)
+                  (GHC.Classes.max @ a v)
+                    `cast`
+                  (Sym (Exercises.N:Constant[0] <a>_R <b>_P)
+                   ->_R Sym (Exercises.N:Constant[0] <a>_R <b>_P)
+                   ->_R Sym (Exercises.N:Constant[0] <a>_R <b>_P))
+                  (GHC.Classes.min @ a v)
+                    `cast`
+                  (Sym (Exercises.N:Constant[0] <a>_R <b>_P)
+                   ->_R Sym (Exercises.N:Constant[0] <a>_R <b>_P)
+                   ->_R Sym (Exercises.N:Constant[0] <a>_R <b>_P)) -}
+8b08e917bc4932535d79f568c3e7b1ff
+  $fOrdConstant_$cp1Ord ::
+    GHC.Classes.Ord a => GHC.Classes.Eq (Exercises.Constant a b)
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <L,1*U(1*U(1*U,1*U),A,A,A,A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ a @ b ($dOrd :: GHC.Classes.Ord a) ->
+                 Exercises.$fEqConstant @ a @ b (GHC.Classes.$p1Ord @ a $dOrd)) -}
+978a5b3e0e27af58fa8f7b731b12d2bd
+  $fOrdIdentity ::
+    GHC.Classes.Ord a => GHC.Classes.Ord (Exercises.Identity a)
+  DFunId
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <L,U(1*U(1*U,1*U),1*U,1*U,1*U,1*U,1*U,1*U,1*U)>m,
+     Inline: CONLIKE,
+     Unfolding: DFun: @ a (v :: GHC.Classes.Ord a).
+                  @ (Exercises.Identity a)
+                  (Exercises.$fOrdIdentity_$cp1Ord @ a v)
+                  (GHC.Classes.compare @ a v)
+                    `cast`
+                  (Sym (Exercises.N:Identity[0] <a>_R)
+                   ->_R Sym (Exercises.N:Identity[0] <a>_R)
+                   ->_R <GHC.Types.Ordering>_R)
+                  (GHC.Classes.< @ a v)
+                    `cast`
+                  (Sym (Exercises.N:Identity[0] <a>_R)
+                   ->_R Sym (Exercises.N:Identity[0] <a>_R)
+                   ->_R <GHC.Types.Bool>_R)
+                  (GHC.Classes.<= @ a v)
+                    `cast`
+                  (Sym (Exercises.N:Identity[0] <a>_R)
+                   ->_R Sym (Exercises.N:Identity[0] <a>_R)
+                   ->_R <GHC.Types.Bool>_R)
+                  (GHC.Classes.> @ a v)
+                    `cast`
+                  (Sym (Exercises.N:Identity[0] <a>_R)
+                   ->_R Sym (Exercises.N:Identity[0] <a>_R)
+                   ->_R <GHC.Types.Bool>_R)
+                  (GHC.Classes.>= @ a v)
+                    `cast`
+                  (Sym (Exercises.N:Identity[0] <a>_R)
+                   ->_R Sym (Exercises.N:Identity[0] <a>_R)
+                   ->_R <GHC.Types.Bool>_R)
+                  (GHC.Classes.max @ a v)
+                    `cast`
+                  (Sym (Exercises.N:Identity[0] <a>_R)
+                   ->_R Sym (Exercises.N:Identity[0] <a>_R)
+                   ->_R Sym (Exercises.N:Identity[0] <a>_R))
+                  (GHC.Classes.min @ a v)
+                    `cast`
+                  (Sym (Exercises.N:Identity[0] <a>_R)
+                   ->_R Sym (Exercises.N:Identity[0] <a>_R)
+                   ->_R Sym (Exercises.N:Identity[0] <a>_R)) -}
+978a5b3e0e27af58fa8f7b731b12d2bd
+  $fOrdIdentity_$cp1Ord ::
+    GHC.Classes.Ord a => GHC.Classes.Eq (Exercises.Identity a)
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <L,1*U(1*U(1*U,1*U),A,A,A,A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ a ($dOrd :: GHC.Classes.Ord a) ->
+                 Exercises.$fEqIdentity @ a (GHC.Classes.$p1Ord @ a $dOrd)) -}
+66545045b285f286d1d15d4281d14bec
+  $fSemigroupList :: GHC.Base.Semigroup (Exercises.List a)
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun: @ a.
+                  @ (Exercises.List a)
+                  (Exercises.$fMonoidList_$c<> @ a)
+                  (Exercises.$fSemigroupList_$csconcat @ a)
+                  (Exercises.$fSemigroupList_$cstimes @ a) -}
+66545045b285f286d1d15d4281d14bec
+  $fSemigroupList1 ::
+    Exercises.List a -> [Exercises.List a] -> Exercises.List a
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U> -}
+66545045b285f286d1d15d4281d14bec
+  $fSemigroupList_$csconcat ::
+    GHC.Base.NonEmpty (Exercises.List a) -> Exercises.List a
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SS),1*U(1*U,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ a (ds :: GHC.Base.NonEmpty (Exercises.List a)) ->
+                 case ds of wild { GHC.Base.:| a1 as ->
+                 Exercises.$fSemigroupList1 @ a a1 as }) -}
+66545045b285f286d1d15d4281d14bec
+  $fSemigroupList_$cstimes ::
+    GHC.Real.Integral b => b -> Exercises.List a -> Exercises.List a
+  {- Arity: 1, Strictness: <L,U> -}
+8b08e917bc4932535d79f568c3e7b1ff
+  $fShowConstant ::
+    GHC.Show.Show a => GHC.Show.Show (Exercises.Constant a b)
+  DFunId
+  {- Arity: 1, Strictness: <L,U(C(C1(C(U))),A,A)>m, Inline: CONLIKE,
+     Unfolding: DFun: @ a @ b (v :: GHC.Show.Show a).
+                  @ (Exercises.Constant a b)
+                  (Exercises.$fShowConstant_$cshowsPrec @ a @ b v)
+                  (Exercises.$fShowConstant_$cshow @ a @ b v)
+                  (Exercises.$fShowConstant_$cshowList @ a @ b v) -}
+ee73b3d1cbd990fe6202a0f8ac5cfe8d
+  $fShowConstant1 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0#) -}
+f15eef8c8c77e8dbea2b2d5691c517a1
+  $fShowConstant2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("}"#) -}
+d7f04402caa270b9f44cf79b801da6e2
+  $fShowConstant3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("getConstant = "#) -}
+779072c46db4676f1dd3d493f5eda575
+  $fShowConstant4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Constant {"#) -}
+6e0aad8fc00f7b7512a00f0ae47e828f
+  $fShowConstant5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   Exercises.$fShowConstant2) -}
+8b08e917bc4932535d79f568c3e7b1ff
+  $fShowConstant_$cshow ::
+    GHC.Show.Show a => Exercises.Constant a b -> GHC.Base.String
+  {- Arity: 2, Strictness: <L,1*U(1*C1(C1(C1(U))),A,A)><L,U>,
+     Unfolding: (\ @ a
+                   @ b
+                   ($dShow :: GHC.Show.Show a)
+                   (x :: Exercises.Constant a b) ->
+                 GHC.CString.unpackAppendCString#
+                   Exercises.$fShowConstant4
+                   (GHC.CString.unpackAppendCString#
+                      Exercises.$fShowConstant3
+                      (GHC.Show.showsPrec
+                         @ a
+                         $dShow
+                         Exercises.$fShowConstant1
+                         x `cast` (Exercises.N:Constant[0] <a>_R <b>_P)
+                         Exercises.$fShowConstant5))) -}
+8b08e917bc4932535d79f568c3e7b1ff
+  $fShowConstant_$cshowList ::
+    GHC.Show.Show a => [Exercises.Constant a b] -> GHC.Show.ShowS
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,U(C(C1(C(U))),A,A)><S,1*U><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   @ b
+                   ($dShow :: GHC.Show.Show a)
+                   (ls :: [Exercises.Constant a b])
+                   (s :: GHC.Base.String) ->
+                 GHC.Show.showList__
+                   @ (Exercises.Constant a b)
+                   (Exercises.$fShowConstant_$cshowsPrec
+                      @ a
+                      @ b
+                      $dShow
+                      Exercises.$fShowConstant1)
+                   ls
+                   s) -}
+8b08e917bc4932535d79f568c3e7b1ff
+  $fShowConstant_$cshowsPrec ::
+    GHC.Show.Show a =>
+    GHC.Types.Int -> Exercises.Constant a b -> GHC.Show.ShowS
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,1*U(1*C1(C1(C(U))),A,A)><S(S),1*U(U)><L,U>,
+     Inline: [0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   @ b
+                   (w :: GHC.Show.Show a)
+                   (w1 :: GHC.Types.Int)
+                   (w2 :: Exercises.Constant a b) ->
+                 case w1 of ww { GHC.Types.I# ww1 ->
+                 Exercises.$w$cshowsPrec @ a @ b w ww1 w2 }) -}
+978a5b3e0e27af58fa8f7b731b12d2bd
+  $fShowIdentity ::
+    GHC.Show.Show a => GHC.Show.Show (Exercises.Identity a)
+  DFunId
+  {- Arity: 1, Strictness: <L,U(C(C1(C(U))),A,A)>m, Inline: CONLIKE,
+     Unfolding: DFun: @ a (v :: GHC.Show.Show a).
+                  @ (Exercises.Identity a)
+                  (Exercises.$fShowIdentity_$cshowsPrec @ a v)
+                  (Exercises.$fShowIdentity_$cshow @ a v)
+                  (Exercises.$fShowIdentity_$cshowList @ a v) -}
+e8ed34b0fc41dc01c51d9728ff8d930d
+  $fShowIdentity1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   Exercises.$fShowIdentity2) -}
+1b7150cebdbc064da1d6b5013089d124
+  $fShowIdentity2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Identity "#) -}
+a8d18a1ba6e5a5bf86619ac39800568b
+  $fShowIdentity3 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 11#) -}
+978a5b3e0e27af58fa8f7b731b12d2bd
+  $fShowIdentity_$cshow ::
+    GHC.Show.Show a => Exercises.Identity a -> GHC.Base.String
+  {- Arity: 2, Strictness: <L,1*U(1*C1(C1(C1(U))),A,A)><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a ($dShow :: GHC.Show.Show a) (x :: Exercises.Identity a) ->
+                 GHC.Base.augment
+                   @ GHC.Types.Char
+                   (\ @ b
+                      (c :: GHC.Types.Char -> b -> b)[OneShot]
+                      (n :: b)[OneShot] ->
+                    GHC.Base.foldr @ GHC.Types.Char @ b c n Exercises.$fShowIdentity1)
+                   (GHC.Show.showsPrec
+                      @ a
+                      $dShow
+                      Exercises.$fShowIdentity3
+                      x `cast` (Exercises.N:Identity[0] <a>_R)
+                      (GHC.Types.[] @ GHC.Types.Char))) -}
+978a5b3e0e27af58fa8f7b731b12d2bd
+  $fShowIdentity_$cshowList ::
+    GHC.Show.Show a => [Exercises.Identity a] -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,U(C(C1(C(U))),A,A)><S,1*U><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   ($dShow :: GHC.Show.Show a)
+                   (ls :: [Exercises.Identity a])
+                   (s :: GHC.Base.String) ->
+                 GHC.Show.showList__
+                   @ (Exercises.Identity a)
+                   (Exercises.$fShowIdentity_$cshowsPrec
+                      @ a
+                      $dShow
+                      Exercises.$fShowConstant1)
+                   ls
+                   s) -}
+978a5b3e0e27af58fa8f7b731b12d2bd
+  $fShowIdentity_$cshowsPrec ::
+    GHC.Show.Show a =>
+    GHC.Types.Int -> Exercises.Identity a -> GHC.Show.ShowS
+  {- Arity: 3,
+     Strictness: <L,1*U(1*C1(C1(C(U))),A,A)><S(S),1*U(U)><L,U>,
+     Inline: [0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   (w :: GHC.Show.Show a)
+                   (w1 :: GHC.Types.Int)
+                   (w2 :: Exercises.Identity a) ->
+                 case w1 of ww { GHC.Types.I# ww1 ->
+                 Exercises.$w$cshowsPrec1 @ a w ww1 w2 }) -}
+66545045b285f286d1d15d4281d14bec
+  $fShowList :: GHC.Show.Show a => GHC.Show.Show (Exercises.List a)
+  DFunId
+  {- Arity: 1, Strictness: <L,U(C(C1(C(U))),A,A)>m, Inline: CONLIKE,
+     Unfolding: DFun: @ a (v :: GHC.Show.Show a).
+                  @ (Exercises.List a)
+                  (Exercises.$fShowList_$cshowsPrec @ a v)
+                  (Exercises.$fShowList_$cshow @ a v)
+                  (Exercises.$fShowList_$cshowList @ a v) -}
+66545045b285f286d1d15d4281d14bec
+  $fShowList_$cshow ::
+    GHC.Show.Show a => Exercises.List a -> GHC.Base.String
+  {- Arity: 2, Strictness: <L,U(C(C1(C(U))),A,A)><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a ($dShow :: GHC.Show.Show a) (x :: Exercises.List a) ->
+                 Exercises.$fShowList_$cshowsPrec
+                   @ a
+                   $dShow
+                   Exercises.$fShowConstant1
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+66545045b285f286d1d15d4281d14bec
+  $fShowList_$cshowList ::
+    GHC.Show.Show a => [Exercises.List a] -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,U(C(C1(C(U))),A,A)><S,1*U><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   ($dShow :: GHC.Show.Show a)
+                   (ls :: [Exercises.List a])
+                   (s :: GHC.Base.String) ->
+                 GHC.Show.showList__
+                   @ (Exercises.List a)
+                   (Exercises.$fShowList_$cshowsPrec
+                      @ a
+                      $dShow
+                      Exercises.$fShowConstant1)
+                   ls
+                   s) -}
+66545045b285f286d1d15d4281d14bec
+  $fShowList_$cshowsPrec ::
+    GHC.Show.Show a =>
+    GHC.Types.Int -> Exercises.List a -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,U(C(C1(C(U))),A,A)><L,1*U(U)><S,1*U> -}
+b858914e1ebca7e84bf80c74db115108
+  $tc'Cons :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   14053295757750895242##
+                   16115742749890443300##
+                   Exercises.$trModule
+                   Exercises.$tc'Cons2
+                   1#
+                   Exercises.$tc'Cons1) -}
+5aa0453837c064cdba61cef122936c76
+  $tc'Cons1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m4, Inline: [~] -}
+7e67ea44ddeadaf0e32415f56e125af5
+  $tc'Cons2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Exercises.$tc'Cons3) -}
+9c292b53c0eea9011a1cba7684c8eb67
+  $tc'Cons3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Cons"#) -}
+3c9c637d40cf96d93a73ce073967f153
+  $tc'Constant :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   5386965847902875823##
+                   609804506376161502##
+                   Exercises.$trModule
+                   Exercises.$tc'Constant2
+                   2#
+                   Exercises.$tc'Constant1) -}
+81abfff9a47157b3e49b6bd314e0659d
+  $tc'Constant1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m4, Inline: [~] -}
+f29a86af87ca0acafddf92e5c12ad780
+  $tc'Constant2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Exercises.$tc'Constant3) -}
+af0d55a856d3231b3f4931725e4fdf2b
+  $tc'Constant3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Constant"#) -}
+a02d4a530458f72d1b0a15393f823909
+  $tc'Identity :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   5920673437129793670##
+                   8234549416237687512##
+                   Exercises.$trModule
+                   Exercises.$tc'Identity2
+                   1#
+                   Exercises.$tc'Identity1) -}
+801e33bf593369c676a6751c977f54ba
+  $tc'Identity1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m4, Inline: [~] -}
+f6e43d4253902a8daa2fabe7997defb6
+  $tc'Identity2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Exercises.$tc'Identity3) -}
+a578dd3c55ff776f4262e123947ed958
+  $tc'Identity3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Identity"#) -}
+1482194c0550d79dd796a657ee3b22d2
+  $tc'Nil :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   1934145900448917633##
+                   4629526322777713006##
+                   Exercises.$trModule
+                   Exercises.$tc'Nil2
+                   1#
+                   Exercises.$tc'Nil1) -}
+e11d26bbd3210d584bd487362271fdee
+  $tc'Nil1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m1, Inline: [~] -}
+56c911a34e5ff388bde9f6ad6c41d9b9
+  $tc'Nil2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Exercises.$tc'Nil3) -}
+afa447ad23bb1efdd5cad49af3c0c605
+  $tc'Nil3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Nil"#) -}
+8dcd939f8f538667ae427940d4c234fe
+  $tcConstant :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   17066185300025834357##
+                   13423866570088653474##
+                   Exercises.$trModule
+                   Exercises.$tcConstant1
+                   0#
+                   GHC.Types.krep$*->*->*) -}
+b2283968fa99e4bfa43690049bd680d6
+  $tcConstant1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Exercises.$tcConstant2) -}
+289a036332c4e2a0cc4a3bf26b565df4
+  $tcConstant2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Constant"#) -}
+042e53d7dff943c364222080b3c85eff
+  $tcIdentity :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   999867003255580585##
+                   14885545827441980491##
+                   Exercises.$trModule
+                   Exercises.$tcIdentity1
+                   0#
+                   GHC.Types.krep$*Arr*) -}
+fe1a9543ecb17d124e729321fa8a5e8f
+  $tcIdentity1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Exercises.$tcIdentity2) -}
+5a513774c6b36f50272007ddb525df80
+  $tcIdentity2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Identity"#) -}
+99ffa8f1f971aa19344e5dd40380f4d4
+  $tcList :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   17512478925664941856##
+                   13208089831415045520##
+                   Exercises.$trModule
+                   Exercises.$tcList1
+                   0#
+                   GHC.Types.krep$*Arr*) -}
+0d396babf34300bce2cabe5d53fd063a
+  $tcList1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Exercises.$tcList2) -}
+9d2c6e1bd5973c057789fb3c979109fe
+  $tcList2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("List"#) -}
+6110ce09cc01e90eb1037cf8948a412d
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Exercises.$trModule3
+                   Exercises.$trModule1) -}
+3261620a1905cf1afc1f01aa0587f92d
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Exercises.$trModule2) -}
+d7e1e12f2d03cf6a7d32f0ed0fe17c61
+  $trModule2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Exercises"#) -}
+50d96752c523a1350493b936627b7afe
+  $trModule3 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Exercises.$trModule4) -}
+b636528da783d22bc0ab149ab1516d62
+  $trModule4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("Exercises-0.1.0.0-5ZhWKAUoMO1VPEusXAdKH"#) -}
+8b08e917bc4932535d79f568c3e7b1ff
+  $w$cshowsPrec ::
+    GHC.Show.Show a =>
+    GHC.Prim.Int# -> Exercises.Constant a b -> GHC.Show.ShowS
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,1*U(1*C1(C1(C(U))),A,A)><S,U><L,U>, Inline: [0],
+     Unfolding: (\ @ a
+                   @ b
+                   (w :: GHC.Show.Show a)
+                   (ww :: GHC.Prim.Int#)
+                   (w1 :: Exercises.Constant a b) ->
+                 let {
+                   f :: GHC.Base.String -> GHC.Base.String
+                   = GHC.Show.showsPrec
+                       @ a
+                       w
+                       Exercises.$fShowConstant1
+                       w1 `cast` (Exercises.N:Constant[0] <a>_R <b>_P)
+                 } in
+                 case GHC.Prim.>=# ww 11# of lwild {
+                   DEFAULT
+                   -> \ (x :: GHC.Base.String) ->
+                      GHC.CString.unpackAppendCString#
+                        Exercises.$fShowConstant4
+                        (GHC.CString.unpackAppendCString#
+                           Exercises.$fShowConstant3
+                           (f (GHC.CString.unpackAppendCString# Exercises.$fShowConstant2 x)))
+                   1#
+                   -> \ (x :: GHC.Base.String) ->
+                      GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.$fShow(,)4
+                        (GHC.CString.unpackAppendCString#
+                           Exercises.$fShowConstant4
+                           (GHC.CString.unpackAppendCString#
+                              Exercises.$fShowConstant3
+                              (f (GHC.CString.unpackAppendCString#
+                                    Exercises.$fShowConstant2
+                                    (GHC.Types.: @ GHC.Types.Char GHC.Show.$fShow(,)2 x))))) }) -}
+978a5b3e0e27af58fa8f7b731b12d2bd
+  $w$cshowsPrec1 ::
+    GHC.Show.Show a =>
+    GHC.Prim.Int# -> Exercises.Identity a -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,1*U(1*C1(C1(C(U))),A,A)><S,U><L,U>,
+     Inline: [0],
+     Unfolding: (\ @ a
+                   (w :: GHC.Show.Show a)
+                   (ww :: GHC.Prim.Int#)
+                   (w1 :: Exercises.Identity a) ->
+                 let {
+                   g :: GHC.Base.String -> GHC.Base.String
+                   = GHC.Show.showsPrec
+                       @ a
+                       w
+                       Exercises.$fShowIdentity3
+                       w1 `cast` (Exercises.N:Identity[0] <a>_R)
+                 } in
+                 case GHC.Prim.>=# ww 11# of lwild {
+                   DEFAULT
+                   -> \ (x :: GHC.Base.String) ->
+                      GHC.Base.++ @ GHC.Types.Char Exercises.$fShowIdentity1 (g x)
+                   1#
+                   -> \ (x :: GHC.Base.String) ->
+                      GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.$fShow(,)4
+                        (GHC.Base.++
+                           @ GHC.Types.Char
+                           Exercises.$fShowIdentity1
+                           (g (GHC.Types.: @ GHC.Types.Char GHC.Show.$fShow(,)2 x))) }) -}
+8b08e917bc4932535d79f568c3e7b1ff
+  type role Constant representational phantom
+  newtype Constant a b = Constant {getConstant :: a}
+978a5b3e0e27af58fa8f7b731b12d2bd
+  newtype Identity a = Identity a
+66545045b285f286d1d15d4281d14bec
+  data List a = Nil | Cons a (Exercises.List a)
+7a26f5be8de2ef6252e76ab2dde86413
+  added :: GHC.Base.Maybe GHC.Integer.Type.Integer
+  {- Unfolding: (case Exercises.y of wild {
+                   GHC.Base.Nothing -> GHC.Base.Nothing @ GHC.Integer.Type.Integer
+                   GHC.Base.Just a1
+                   -> GHC.Base.Just
+                        @ GHC.Integer.Type.Integer
+                        (GHC.Integer.Type.plusInteger a1 Exercises.added1) }) -}
+bbd1689c89d2fc742461e36fea842898
+  added1 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (3) -}
+8b08e917bc4932535d79f568c3e7b1ff
+  getConstant :: Exercises.Constant a b -> a
+  RecSel Left Exercises.Constant
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (0, True, True)
+                Exercises.getConstant1
+                  `cast`
+                (forall (a :: <*>_N) (b :: <*>_N).
+                 <Exercises.Constant a b>_R
+                 ->_R Exercises.N:Constant[0] <a>_R <b>_P) -}
+8b08e917bc4932535d79f568c3e7b1ff
+  getConstant1 :: Exercises.Constant a b -> Exercises.Constant a b
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, True)
+                (\ @ a @ b (ds :: Exercises.Constant a b) -> ds) -}
+d5a91542bdd2117ef25a66bbb0b326ef
+  max' :: GHC.Types.Int -> GHC.Types.Int -> GHC.Types.Int
+  {- Arity: 2, HasNoCafRefs, Strictness: <S(S),1*U(U)><S(S),1*U(U)>m,
+     Unfolding: InlineRule (0, True, True) GHC.Classes.$fOrdInt_$cmax -}
+eedad64dde8f4b6c315f3e1010219d0d
+  maxed :: GHC.Base.Maybe GHC.Types.Int
+  {- Unfolding: (case Exercises.x' of wild {
+                   GHC.Base.Nothing -> GHC.Base.Nothing @ GHC.Types.Int
+                   GHC.Base.Just a1
+                   -> case Exercises.y' of wild1 {
+                        GHC.Base.Nothing -> GHC.Base.Nothing @ GHC.Types.Int
+                        GHC.Base.Just a2
+                        -> GHC.Base.Just
+                             @ GHC.Types.Int
+                             (GHC.Classes.$fOrdInt_$cmax a1 a2) } }) -}
+a787968ff93b55e57561df934597fb65
+  summed :: GHC.Base.Maybe GHC.Integer.Type.Integer
+  {- Unfolding: (case Exercises.x'' of wild {
+                   GHC.Base.Nothing -> GHC.Base.Nothing @ GHC.Integer.Type.Integer
+                   GHC.Base.Just a1 -> Exercises.y'' }) -}
+9fc4f7c40071ed081908bb698c22310a
+  tupled ::
+    GHC.Base.Maybe (GHC.Integer.Type.Integer, GHC.Integer.Type.Integer)
+  {- Unfolding: (case Exercises.y of wild {
+                   GHC.Base.Nothing
+                   -> GHC.Base.Nothing
+                        @ (GHC.Integer.Type.Integer, GHC.Integer.Type.Integer)
+                   GHC.Base.Just a1
+                   -> case Exercises.z of wild1 {
+                        GHC.Base.Nothing
+                        -> GHC.Base.Nothing
+                             @ (GHC.Integer.Type.Integer, GHC.Integer.Type.Integer)
+                        GHC.Base.Just a2
+                        -> GHC.Base.Just
+                             @ (GHC.Integer.Type.Integer, GHC.Integer.Type.Integer)
+                             (a1, a2) } }) -}
+d05e8c806a6620fd22ed88c901842acb
+  x' :: GHC.Base.Maybe GHC.Types.Int
+  {- Unfolding: (Exercises.x'_go Exercises.y'1 0#) -}
+b6a9665b02a1477c8753fd5e9c02b127
+  x'' :: GHC.Base.Maybe GHC.Integer.Type.Integer
+  {- Unfolding: (GHC.List.lookup
+                   @ GHC.Integer.Type.Integer
+                   @ GHC.Integer.Type.Integer
+                   GHC.Integer.Type.$fEqInteger
+                   Exercises.added1
+                   (GHC.List.zip
+                      @ GHC.Integer.Type.Integer
+                      @ GHC.Integer.Type.Integer
+                      Exercises.xs'
+                      Exercises.ys')) -}
+dcf39d741cf1b65a154d8a6f06417c53
+  x'_go ::
+    [GHC.Integer.Type.Integer]
+    -> GHC.Prim.Int# -> GHC.Base.Maybe GHC.Types.Int
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,U> -}
+807403b3c13e3f01632918048aa47609
+  xs' :: [GHC.Integer.Type.Integer]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Integer.Type.Integer
+                   Exercises.y11
+                   Exercises.xs'1) -}
+66e5f9085fd08f39054de0299b7a3c88
+  xs'1 :: [GHC.Integer.Type.Integer]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Integer.Type.Integer
+                   Exercises.y8
+                   Exercises.xs'2) -}
+c4db70831c6f35585de0a1cfc03bad3e
+  xs'2 :: [GHC.Integer.Type.Integer]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Integer.Type.Integer
+                   Exercises.added1
+                   (GHC.Types.[] @ GHC.Integer.Type.Integer)) -}
+680e16e4d687a7e1cea113c5af61373f
+  y :: GHC.Base.Maybe GHC.Integer.Type.Integer
+  {- Unfolding: (GHC.List.lookup
+                   @ GHC.Integer.Type.Integer
+                   @ GHC.Integer.Type.Integer
+                   GHC.Integer.Type.$fEqInteger
+                   Exercises.added1
+                   Exercises.y1) -}
+e394c30811594d3de740b3a86862c324
+  y' :: GHC.Base.Maybe GHC.Types.Int
+  {- Unfolding: (Exercises.y'_go Exercises.y'1 0#) -}
+e8b63cec8906455b380adcb207b7870d
+  y'' :: GHC.Base.Maybe GHC.Integer.Type.Integer
+  {- Unfolding: (GHC.List.lookup
+                   @ GHC.Integer.Type.Integer
+                   @ GHC.Integer.Type.Integer
+                   GHC.Integer.Type.$fEqInteger
+                   Exercises.y8
+                   (GHC.List.zip
+                      @ GHC.Integer.Type.Integer
+                      @ GHC.Integer.Type.Integer
+                      Exercises.xs'
+                      Exercises.ys')) -}
+0ba9b221d77422b6a00bbecac815711b
+  y'1 :: [GHC.Integer.Type.Integer]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Integer.Type.Integer
+                   Exercises.y11
+                   Exercises.y'2) -}
+46c82a8854862315b1909e247f221f32
+  y'2 :: [GHC.Integer.Type.Integer]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Integer.Type.Integer
+                   Exercises.y8
+                   Exercises.y'3) -}
+e7e045acb951a169e0225fbdb35b99f3
+  y'3 :: [GHC.Integer.Type.Integer]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Integer.Type.Integer
+                   Exercises.added1
+                   Exercises.y'4) -}
+7a7bd3c88e0a66e132eeb4c4e2a31760
+  y'4 :: [GHC.Integer.Type.Integer]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Integer.Type.Integer
+                   Exercises.y10
+                   Exercises.y'5) -}
+487f6ac1168601ef551ab5434ffd08a7
+  y'5 :: [GHC.Integer.Type.Integer]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Integer.Type.Integer
+                   Exercises.y7
+                   (GHC.Types.[] @ GHC.Integer.Type.Integer)) -}
+8210bd4e0cfc3e610cc322f73bd0c893
+  y'_go ::
+    [GHC.Integer.Type.Integer]
+    -> GHC.Prim.Int# -> GHC.Base.Maybe GHC.Types.Int
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,U> -}
+f3155abc2f0ff64a067b63d39cf5c948
+  y1 :: [(GHC.Integer.Type.Integer, GHC.Integer.Type.Integer)]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Integer.Type.Integer, GHC.Integer.Type.Integer)
+                   Exercises.y9
+                   Exercises.y2) -}
+9d1f0e54e02e96d4bd08ccb5ff760490
+  y10 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (4) -}
+27ab75b8acb55690c3a2a1bb8f8cb059
+  y11 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (1) -}
+2d2b64d7c517e1e61ae74b6587be3342
+  y2 :: [(GHC.Integer.Type.Integer, GHC.Integer.Type.Integer)]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Integer.Type.Integer, GHC.Integer.Type.Integer)
+                   Exercises.y6
+                   Exercises.y3) -}
+3ce0e1129fe0fcea9453f9a69225da8b
+  y3 :: [(GHC.Integer.Type.Integer, GHC.Integer.Type.Integer)]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Integer.Type.Integer, GHC.Integer.Type.Integer)
+                   Exercises.y4
+                   (GHC.Types.[]
+                      @ (GHC.Integer.Type.Integer, GHC.Integer.Type.Integer))) -}
+bef4164584dc30da6c97772f3b902d8a
+  y4 :: (GHC.Integer.Type.Integer, GHC.Integer.Type.Integer)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((Exercises.added1, Exercises.y5)) -}
+895adddab55b27c2d6ea15c300f5f383
+  y5 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (6) -}
+932d7e0feb044542cdad78c033c95d4d
+  y6 :: (GHC.Integer.Type.Integer, GHC.Integer.Type.Integer)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((Exercises.y8, Exercises.y7)) -}
+9f70bddf9c91b42a8118e80045a7d5ce
+  y7 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (5) -}
+455305250ce58a27f84528925824db84
+  y8 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (2) -}
+4467fe64c10aa8467e0c5dd32f71ff7a
+  y9 :: (GHC.Integer.Type.Integer, GHC.Integer.Type.Integer)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((Exercises.y11, Exercises.y10)) -}
+02325d50350677ab7bc004ef1a80f954
+  ys' :: [GHC.Integer.Type.Integer]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Integer.Type.Integer
+                   Exercises.y10
+                   Exercises.ys'1) -}
+65bfc0e7fd8e31f2c0e84330ae04a69e
+  ys'1 :: [GHC.Integer.Type.Integer]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Integer.Type.Integer
+                   Exercises.y7
+                   Exercises.ys'2) -}
+759fc9d5b088588e0f7e240497f0530b
+  ys'2 :: [GHC.Integer.Type.Integer]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Integer.Type.Integer
+                   Exercises.y5
+                   (GHC.Types.[] @ GHC.Integer.Type.Integer)) -}
+1c2b7445d603570a48bb21086146721a
+  z :: GHC.Base.Maybe GHC.Integer.Type.Integer
+  {- Unfolding: (GHC.List.lookup
+                   @ GHC.Integer.Type.Integer
+                   @ GHC.Integer.Type.Integer
+                   GHC.Integer.Type.$fEqInteger
+                   Exercises.y8
+                   Exercises.y1) -}
+instance [safe] GHC.Base.Applicative [Exercises.Constant]
+  = Exercises.$fApplicativeConstant
+instance [safe] GHC.Base.Applicative [Exercises.Identity]
+  = Exercises.$fApplicativeIdentity
+instance [safe] GHC.Base.Applicative [Exercises.List]
+  = Exercises.$fApplicativeList
+instance [safe] GHC.Classes.Eq [Exercises.Constant]
+  = Exercises.$fEqConstant
+instance [safe] GHC.Classes.Eq [Exercises.Identity]
+  = Exercises.$fEqIdentity
+instance [safe] GHC.Classes.Eq [Exercises.List]
+  = Exercises.$fEqList
+instance [safe] GHC.Base.Functor [Exercises.Constant]
+  = Exercises.$fFunctorConstant
+instance [safe] GHC.Base.Functor [Exercises.Identity]
+  = Exercises.$fFunctorIdentity
+instance [safe] GHC.Base.Functor [Exercises.List]
+  = Exercises.$fFunctorList
+instance [safe] GHC.Base.Monoid [Exercises.List]
+  = Exercises.$fMonoidList
+instance [safe] GHC.Classes.Ord [Exercises.Constant]
+  = Exercises.$fOrdConstant
+instance [safe] GHC.Classes.Ord [Exercises.Identity]
+  = Exercises.$fOrdIdentity
+instance [safe] GHC.Base.Semigroup [Exercises.List]
+  = Exercises.$fSemigroupList
+instance [safe] GHC.Show.Show [Exercises.Constant]
+  = Exercises.$fShowConstant
+instance [safe] GHC.Show.Show [Exercises.Identity]
+  = Exercises.$fShowIdentity
+instance [safe] GHC.Show.Show [Exercises.List]
+  = Exercises.$fShowList
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+
