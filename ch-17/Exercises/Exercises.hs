@@ -106,15 +106,36 @@ data Validation e a
   | Success a
   deriving (Eq, Show)
 
--- same as Either
 instance Functor (Validation e) where
   fmap f (Success a) = Success (f a)
   fmap _ (Failure e) = Failure e
 
--- This is different
 instance Monoid e => Applicative (Validation e) where
   pure = Success
   (<*>) (Success f) (Success x) = Success (f x)
   (<*>) (Failure x) (Failure y) = Failure (x <> y)
   (<*>) _ (Failure x) = Failure x
   (<*>) (Failure y) _ = Failure y
+
+-- Chapter Exercises
+-- Given a type that has an instance of Applicative, specialize the types of the methods
+
+-- []
+
+-- pure :: a -> [a]
+-- (<*>) :: [(a -> b)] -> [a] -> [b]
+
+-- IO
+
+-- pure :: a -> IO a
+-- (<*>) :: IO (a -> b) -> IO a -> IO b
+
+-- (,) a
+
+-- pure :: a -> (e, a)
+-- (<*>) :: (e, (a -> b)) -> (e, a) -> (e, b)
+
+-- (->) e
+
+-- pure :: a -> (e -> a)
+-- (<*>) :: (e -> (a -> b)) -> (e -> a) -> (e -> b)
