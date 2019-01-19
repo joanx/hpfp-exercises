@@ -139,3 +139,69 @@ instance Monoid e => Applicative (Validation e) where
 
 -- pure :: a -> (e -> a)
 -- (<*>) :: (e -> (a -> b)) -> (e -> a) -> (e -> b)
+
+-- Pair
+
+data Pair a = Pair a a deriving Show
+
+instance Functor Pair where
+  fmap f (Pair a b) = Pair (f a) (f b)
+
+instance Applicative Pair where
+  pure a = Pair a a
+  (Pair f g) <*> (Pair a b) = Pair (f a) Pair (g b)
+
+-- Two
+
+data Two a b = Two a b
+
+instance Functor (Two a) where
+  fmap f (Two a b) = Two a (f b)
+
+instance Monoid a => Applicative (Two a) where
+  pure = Two mempty
+  (Two a f) <*> (Two b x) = Two (a <> b) (f x)
+
+-- Three
+
+data Three a b c = Three a b c
+
+instance Functor (Three a b) where
+  fmap f (Three a b c) = Three a b (f c)
+
+instance (Monoid a, Monoid b) => Applicative (Three a b) where
+  pure = Three mempty mempty
+  (<*>) (Three a b f) (Three x y z) = Three (a <> x) (b <> y) (f z)
+
+-- Three'
+
+data Three' a b = Three' a b b
+
+instance Functor (Three' a) where
+  fmap f (Three a b c) = Three a (f b) (f c)
+
+instance Monoid a => Applicative (Three' a) where
+  pure a = Three mempty a a
+  (<*>) (Three a f g) (Three x y z) = Three (a <> x) (f y) (g z)
+
+-- Four
+
+data Four a b c d = Four a b c d
+
+instance Functor (Four a b c) where
+  fmap f (Four a b c d) = Four a b c (f d)
+
+instance (Monoid a, Monoid b, Monoid c) => Applicative (Four a b c) where
+  pure = Four mempty mempty mempty
+  (<*>) (Four a b c f) (Four w x y z) = Four (a <> w) (b <> x) (c <> y) (f z)
+
+-- Four'
+
+data Four' a b = Four' a a a b
+
+instance Functor (Four' a) where
+  fmap f (Four' a b c d) = Four' a b c (f d)
+
+instance Monoid a => Applicative (Four' a) where
+  pure = Four' mempty mempty mempty
+  (<*>) (Four' a b c f) (Four' w x y z) = Four' (a <> w) (b <> x) (c <> y) (f z)
