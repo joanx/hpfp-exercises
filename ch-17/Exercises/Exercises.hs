@@ -1,5 +1,6 @@
 module Exercises where
 import Data.List (elemIndex)
+import Control.Applicative (liftA3)
 
 -- Exercises: Lookups
 -- 1.
@@ -141,7 +142,6 @@ instance Monoid e => Applicative (Validation e) where
 -- (<*>) :: (e -> (a -> b)) -> (e -> a) -> (e -> b)
 
 -- Pair
-
 data Pair a = Pair a a deriving Show
 
 instance Functor Pair where
@@ -152,7 +152,6 @@ instance Applicative Pair where
   (Pair f g) <*> (Pair a b) = Pair (f a) Pair (g b)
 
 -- Two
-
 data Two a b = Two a b
 
 instance Functor (Two a) where
@@ -163,7 +162,6 @@ instance Monoid a => Applicative (Two a) where
   (Two a f) <*> (Two b x) = Two (a <> b) (f x)
 
 -- Three
-
 data Three a b c = Three a b c
 
 instance Functor (Three a b) where
@@ -174,7 +172,6 @@ instance (Monoid a, Monoid b) => Applicative (Three a b) where
   (<*>) (Three a b f) (Three x y z) = Three (a <> x) (b <> y) (f z)
 
 -- Three'
-
 data Three' a b = Three' a b b
 
 instance Functor (Three' a) where
@@ -185,7 +182,6 @@ instance Monoid a => Applicative (Three' a) where
   (<*>) (Three a f g) (Three x y z) = Three (a <> x) (f y) (g z)
 
 -- Four
-
 data Four a b c d = Four a b c d
 
 instance Functor (Four a b c) where
@@ -196,7 +192,6 @@ instance (Monoid a, Monoid b, Monoid c) => Applicative (Four a b c) where
   (<*>) (Four a b c f) (Four w x y z) = Four (a <> w) (b <> x) (c <> y) (f z)
 
 -- Four'
-
 data Four' a b = Four' a a a b
 
 instance Functor (Four' a) where
@@ -205,3 +200,13 @@ instance Functor (Four' a) where
 instance Monoid a => Applicative (Four' a) where
   pure = Four' mempty mempty mempty
   (<*>) (Four' a b c f) (Four' w x y z) = Four' (a <> w) (b <> x) (c <> y) (f z)
+
+-- Combinations: Write the function to generate the possible combinations of three input lists using liftA3 from Control.Applicative.
+stops :: String
+stops = "pbtdkg"
+
+vowels :: String
+vowels = "aeiou"
+
+combos :: [a] -> [b] -> [c] -> [(a, b, c)]
+combos a b c = liftA3 (,,) a b c
